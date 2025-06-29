@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>صفحة التسجيل</title>
+  <link rel="stylesheet" href="twsaa2.css" />
+</head>
+<body>
+
+  <div class="container">
+
+    
+    <div class="right-section">
+      
+      <div class="header">
+        <div class="logos">
+          <img src="twsaa2.png" alt="شعار توسع" class="logo-tawasoa" />
+          <img src="raed-logo.svg" alt="شعار رائد" class="logo-raed" />
+        </div>
+        <button class="lang-btn" id="langToggle">EN</button>
+      </div>
+      
+      <form class="form" id="registerForm" method="POST" action="https://script.google.com/macros/s/AKfycbwNGXdk6ZnYtr0vWyB0BpFF8UDIMnHzzxuaIn0mrsLJa_AxDhWha9DjjbfCT5p8ZJDE/exec">
+        <h1 id="formTitle">سجل معنا في مبادرة التجارة الإلكترونية</h1>
+        <p class="initiative-description" style="margin-bottom: 25px;">
+  تهدف هذه المبادرة إلى دعم حاملي وثيقة العمل الحر من خلال تقديم متاجر إلكترونية مجانية
+  لفترة محددة، بالإضافة إلى دورات تدريبية تساعدك على تطوير مهاراتك في
+  التجارة الإلكترونية وإدارة متجرك باحترافية.
+</p>
+
+        <input type="text" name="name" placeholder="الإسم" required />
+        <input type="tel" name="phone" placeholder="رقم الجوال" required />
+        <input type="email" name="email" placeholder="البريد الإلكتروني" required />
+        <input type="text" name="free_work_document_number" placeholder="رقم وثيقة العمل الحر" required />
+
+        <button type="submit" class="submit-btn">تسجيل</button>
+      </form>
+
+    </div>
+    <br>
+    <br>
+<div class="left-section">
+      <img src="WhatsApp Image 2025-06-24 at 10.38.21 AM.jpeg" alt=""/>
+    </div>
+
+  </div>
+
+  <script>
+    const langToggle = document.getElementById('langToggle');
+    const formTitle = document.getElementById('formTitle');
+    const inputs = document.querySelectorAll('input');
+    const submitBtn = document.querySelector('.submit-btn');
+
+    let isArabic = true;
+
+    langToggle.addEventListener('click', () => {
+      if (isArabic) {
+        formTitle.textContent = "Register with us in the E-commerce Initiative";
+        inputs[0].placeholder = "Name";
+        inputs[1].placeholder = "Phone Number";
+        inputs[2].placeholder = "Email";
+        inputs[3].placeholder = "Freelance Work Document Number";
+        submitBtn.textContent = "Register";
+        langToggle.textContent = "AR";
+        document.documentElement.lang = 'en';
+        document.body.dir = 'ltr';
+      } else {
+        formTitle.textContent = "سجل معنا في مبادرة التجارة الإلكترونية";
+        inputs[0].placeholder = "الإسم";
+        inputs[1].placeholder = "رقم الجوال";
+        inputs[2].placeholder = "البريد الإلكتروني";
+        inputs[3].placeholder = "رقم وثيقة العمل الحر";
+        submitBtn.textContent = "تسجيل";
+        langToggle.textContent = "EN";
+        document.documentElement.lang = 'ar';
+        document.body.dir = 'rtl';
+      }
+      isArabic = !isArabic;
+    });
+  </script>
+</body>
+</html>
